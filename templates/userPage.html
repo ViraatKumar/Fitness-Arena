@@ -1,0 +1,44 @@
+{%include "base.html"%}
+{%load static%}
+{%block content%}
+<div class="user-container">
+    <header>
+        <div id="user-info">
+            <i class="fa fa-solid fa-user"></i>
+            <h2>{{user|title}}</h2>
+
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </header>
+    <div class="workout-scheduler">
+        <h1>
+            Dashboard
+        </h1>
+        <hr>
+        <div class="workout-table">
+            {%csrf_token%}
+            <table class="data-table">
+                <tr>
+                    <th>Day</th>
+                    <th>Workout</th>
+                </tr>
+                {% load custom_tags %}
+                {% for i,j in days|zipper:obj %}
+
+                <tr class="exercise">
+                    <td class="day">{{i|title}}</td>
+                    <td class="exercise-name">{{j.name}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+            <form class="scheduler-hidden-form" action="{% url 'viewworkout'%}" method="POST">
+                {%csrf_token%}
+                <input class="day-input" type="text" name="day-name" value="">
+                <input class="workout-input" type="text" name="workout-name" value="">
+            </form>
+            <a style="font-size:12px" href="{%url 'newworkout'%}">click me to add workout</a>
+        </div>
+    </div>
+
+</div>
+{%endblock%}

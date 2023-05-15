@@ -1,0 +1,502 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  /* height: 100vh; */
+  /* */
+}
+/* base.html css code */
+.sidebar {
+  /* display: none; */
+  z-index: 1000;
+  position: fixed;
+  width: 300px;
+  left: -300px;
+  height: 100%;
+  background-color: rgb(25, 24, 24);
+  transition: all 0.5s ease;
+}
+h6 {
+  font-size: 30px;
+}
+.sidebar header {
+  margin-top: 30px;
+  height: 100%;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  background-color: transparent;
+  user-select: none;
+}
+.sidebar ul a {
+  text-align: start;
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid black;
+}
+.sidebar ul a i {
+  margin-right: 20px;
+}
+body {
+  background-color: rgba(40, 39, 39, 0.797);
+
+  /* background-position: center; */
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+/* icon colors for sidebar */
+.sidebar-button-menu i {
+  color: white;
+}
+
+u {
+  text-decoration: underline;
+}
+
+label #open,
+label #close {
+  background-color: red;
+  cursor: pointer;
+  font-size: 35px;
+  position: absolute;
+  border-radius: 3px;
+}
+
+label #open {
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+}
+label #close {
+  z-index: 1111;
+  left: 250px;
+  top: 30px;
+  font-size: 30px;
+  color: white;
+  padding: 4px 9px;
+  transition: all 0.5s ease;
+}
+#toggle:checked ~ body {
+  background-color: yellow;
+}
+.fa-phone {
+  transform: rotate(100deg);
+}
+.fa-dumbbell {
+  transform: rotate(45deg);
+}
+.fa {
+  color: blue;
+}
+
+#shut {
+  position: absolute;
+  top: 17px;
+  right: 18px;
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+}
+#shut i:hover {
+  color: blue;
+}
+#menu {
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  font-size: 30px;
+  cursor: pointer;
+  top: 10px;
+  left: 10px;
+  border-radius: 100px;
+}
+
+#menu i {
+  color: black;
+  margin: 10px 10px;
+  transition: transform 0.5s ease-out;
+}
+#menu i:hover {
+  transform: rotate(180deg);
+}
+
+/* home page css */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* background-image: url("images\\item_1.jpg"); */
+  background-size: cover;
+  font-size: 30px;
+}
+.home h1 {
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  letter-spacing: 1.5px;
+}
+.home img {
+  flex: 1;
+}
+.login-form {
+  color: white;
+  background-color: transparent;
+  text-align: center;
+}
+.authentication {
+  background-color: black;
+  border: 1px solid black;
+  padding: 20px 100px;
+  box-shadow: 10px 10px 10px black;
+  border-radius: 50px;
+  text-align: center;
+}
+.change-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* justify-items: start; */
+
+  margin-bottom: 10px;
+}
+.btn {
+  font-size: 30px;
+  color: white;
+  border: 2px solid black;
+}
+.submit-btn {
+  margin-top: 20px;
+  text-align: center;
+  border: 2px solid white;
+  color: white;
+}
+.block {
+  display: none;
+}
+/* removing the radio buttoms from being visible to the user  */
+.choose_form {
+  display: None;
+}
+.submit-btn:hover {
+  border: 3px solid white;
+  color: white;
+}
+input {
+  background-color: transparent;
+  color: white;
+}
+.login-btn {
+  margin-right: 20px;
+}
+.login-btn:active {
+  border: 1px solid white;
+}
+.fa {
+  color: white;
+}
+/* .home img {
+  width: auto;
+  height: 100vh;
+  b
+} */
+.register-form-view {
+  text-align: center;
+  color: white;
+  justify-items: start;
+}
+th {
+  text-align: end;
+  column-gap: 10px;
+}
+.error {
+  color: red;
+  animation: 0.5s shake 0.8s;
+}
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(25px);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+body {
+  min-width: 100%;
+}
+.homepage {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100%;
+  letter-spacing: 1.5px;
+  color: white;
+  background-image: url("images/homepage_wallpaper.jpg");
+}
+.title-container {
+  text-align: start;
+
+  width: 100%;
+}
+
+#title h2 {
+  font-weight: 900;
+  font-size: 30px;
+}
+special {
+  background: linear-gradient(red, orange);
+  padding: 0px 10px;
+  font-size: 70px;
+}
+#title h1 {
+  font-family: fantasy;
+  font-weight: 900;
+  font-size: 60px;
+  letter-spacing: 2px;
+}
+#title p {
+  font-size: 22px;
+}
+#title {
+  margin-left: 100px;
+  padding: 20px;
+  /* background-color: red; */
+}
+.homepage footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  font-size: 70px;
+}
+
+@keyframes standout {
+  0% {
+    font-size: 70px;
+  }
+  50% {
+    font-size: 85px;
+  }
+  100% {
+    font-size: 70px;
+  }
+}
+
+.signup-btn {
+  background: linear-gradient(red, orange);
+}
+.other {
+  height: 100px;
+}
+.posts-container {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  width: 100%;
+  gap: 20px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 50px 50px;
+}
+
+.post img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.post h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.post p {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+#login-option {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  font-size: 25px;
+}
+.fa-right-to-bracket {
+  color: white;
+}
+
+/* userpage css */
+.user-container header {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 20px;
+  /* background-color: green; */
+  align-items: end;
+}
+#user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 100px;
+}
+#user-info h2 {
+  letter-spacing: 2px;
+}
+#user-info i {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+#user-info select {
+  border: none;
+  background-color: transparent;
+}
+#user-info select:hover {
+  border: none;
+  background-color: transparent;
+}
+#user-info select option {
+  color: black;
+}
+.workout-scheduler h1 {
+  margin-left: 20px;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+}
+.workout-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.data-table {
+  font-size: 15px;
+  width: 300px;
+  color: white;
+  border: 1px solid black;
+}
+.data-table tr td,
+th {
+  height: 50px;
+  text-align: center;
+}
+.data-table tr {
+  border-bottom: 5px solid black;
+}
+.data-table th {
+  font-size: 25px;
+  font-weight: bold;
+}
+.data-table tr:hover:nth-child(1) {
+  background-color: transparent;
+  cursor: auto;
+}
+.exercise:hover {
+  background-color: rgba(49, 46, 46, 0.555);
+  cursor: pointer;
+}
+#exercise-add {
+  border: none;
+  width: 100px;
+}
+.scheduler-hidden-form {
+  display: none;
+}
+.scheduler-form-container {
+  align-items: center;
+  padding: 80px 80px;
+}
+.scheduler-form-container h1 {
+  color: white;
+  margin-bottom: 50px;
+  font-size: 40px;
+}
+.scheduler-form {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  /* text-align: end; */
+  align-items: center;
+  font-size: 20px;
+}
+#input-buttons {
+  text-align: end;
+}
+#main-inputs {
+  text-align: end;
+}
+.scheduler-form input {
+  width: 200px;
+}
+/* #day {
+  display: none;
+} */
+
+#count {
+  display: none;
+}
+.display-workouts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.display-workouts h1 {
+  font-size: 40px;
+}
+.display-workouts a {
+  font-size: 25px;
+}
+.workouts-table {
+  width: 500px;
+  border-spacing: 50px;
+  overflow: scroll;
+}
+.workouts-table th {
+  font-size: 30px;
+  border-bottom: 1px solid black;
+}
+.workouts-table td {
+  font-size: 20px;
+  border-bottom: 1px solid black;
+}
+.workouts-table td,
+th {
+  text-align: center;
+  border: 1px solid black;
+  color: white;
+}

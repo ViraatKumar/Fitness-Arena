@@ -1,0 +1,33 @@
+{%include "base.html"%}
+{%load static%}
+{%block content%}
+<div class="home">
+    {% if message%}
+    <div class="error">
+        {{message}}
+    </div>
+    {% endif %}
+    <div class="authentication">
+        <div class="login-form">
+            <div class="change-form">
+                <label>
+                    <button type="button" class="btn login-btn active">Log In</button>
+                </label>
+                <input type="radio" checked name="choose" id="login-radio" class="choose_form">
+                <label>
+                    <button type="button" class="btn register-btn">Register</button>
+                </label>
+                <input type="radio" name="choose" id="register-radio" class="choose_form">
+            </div>
+            <form action="" method="POST" name="loginform">
+                {%csrf_token%}
+                {%include 'login_form.html'%}
+            </form>
+            <form action="" method="POST" id="registeration_form_submit">
+                {%csrf_token%}
+                {%include 'register_form.html'%}
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}

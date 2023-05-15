@@ -1,0 +1,44 @@
+{% include "base.html"%}
+
+{%block content%}
+<div class="display-workouts">
+    <h1>
+        Day: {{day|title}}
+    </h1>
+    <h1>
+        --{{workout|title}} --
+    </h1>
+    <table class="workouts-table">
+        <tr>
+            <th>
+                Index
+            </th>
+            <th>
+                Exercise
+            </th>
+            <th>
+                Reps
+            </th>
+            <th>
+                Sets
+            </th>
+        </tr>
+        <script>
+            var counter = 0
+        </script>
+        {%for i in exercises%}
+        <tr>
+            <td>
+                <script>
+                    document.write(++counter)
+                </script>
+            </td>
+            <td>{{i.exercise}}</td>
+            <td>{{i.reps}}</td>
+            <td>{{i.sets}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    <a href="{%url 'newworkout'%}">Add Workout</a>
+</div>
+{%endblock%}

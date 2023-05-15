@@ -1,0 +1,32 @@
+{% include "base.html"%}
+
+{%block content%}
+<div class="show-workout">
+
+</div>
+<div class="scheduler-form-container">
+    <form class="scheduler-form" action="/userpage/" method="POST">
+        {%csrf_token%}
+        <div id="main-inputs">
+            <input id="count" name="count" type="number" value="">
+            <h1>Exercise Form</h1>
+            <label for="day">Day: </label>
+            <input type="text" id="day" name="day" value="{{day}}"
+                pattern="(monday|tuesday|wednesday|thursday|friday|saturday|sunday)" placeholder="Eg. Monday" required>
+            <br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Eg. Pullday" required><br>
+        </div>
+        <div class="exercise-form">
+
+        </div>
+        <div id="input-buttons">
+            <disappear>Click to Add Workouts</disappear>
+            <button type="button" class="btn" id="exercise-add">+</button>
+            <br>
+
+            <input style="display:none" type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+{%endblock%}

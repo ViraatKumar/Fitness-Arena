@@ -1,0 +1,85 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="homepage">
+    <div id="login-option">
+        <a href="{%url 'loginreg'%}">Login <i class="fas fa-sign-in-alt"></i> </a>
+    </div>
+    <!-- <a href="loginreg/">click me to login/signup</a> -->
+    <div class="title-container">
+        <div id="title">
+            <h2>Fitness Arena.</h2>
+            <h1>Start your <special><u>JOURNEY</u></special>
+            </h1>
+            <p>
+                Welcome to our fitness website! Our goal is to provide <br>you with the tools and resources you need to
+                lead a <br>healthy, active lifestyle. Whether you're just starting <br>out on your fitness journey or
+                you're
+                a
+                seasoned <br>athlete, we have something for everyone.
+            </p>
+            <button type="button" class="btn signup-btn"><a href="{% url 'loginreg'%}">Sign-Up</a></button>
+        </div>
+    </div>
+    <footer>
+        <a id="other-button" href="#other">v</a>
+    </footer>
+</div>
+<div class="other" id="other">
+    <div class="posts-container">
+        <div class="post">
+            <a href="https://example.com/fitness-blog-2">
+                {% load static %}
+                <img src="{% static 'images\item_2.jpg'%}" alt="Fitness blog 1">
+                <h2>Fitness Blog 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </a>
+        </div>
+
+        <div class="post">
+            <a href="https://example.com/fitness-blog-2">
+                <img src="{% static 'images/item_1.jpg'%}" alt="Fitness blog 2">
+                <h2>Fitness Blog 2</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+            </a>
+        </div>
+
+        <div class="post">
+            <a href="https://example.com/fitness-blog-3">
+                <img src="{% static 'images/item_3.webp'%}" alt="Fitness blog 3">
+                <h2>Fitness Blog 3</h2>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur.</p>
+            </a>
+        </div>
+
+        <div class="post">
+            <a href="https://example.com/fitness-blog-2">
+                <img src="{% static 'images/item_1.jpg'%}" alt="Fitness blog 2">
+                <h2>Fitness Blog 2</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+            </a>
+        </div>
+
+        <div class="post">
+            <a href="https://example.com/fitness-blog-2">
+                <img src="{% static 'images/item_1.jpg'%}" alt="Fitness blog 2">
+                <h2>Fitness Blog 2</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+            </a>
+        </div>
+        <div class="post">
+            <a href="https://example.com/fitness-blog-2">
+                <img src="{% static 'images/item_1.jpg'%}" alt="Fitness blog 2">
+                <h2>Fitness Blog 2</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+            </a>
+        </div>
+    </div>
+
+</div>
+{%endblock%}
