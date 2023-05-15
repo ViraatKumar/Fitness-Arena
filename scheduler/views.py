@@ -4,6 +4,14 @@ from django.contrib.auth import logout
 from . import forms
 from . import models
 # Create your views here.
+
+# def testing(user,day,reps,sets):
+#     e1 = models.Exercise.objects.create(exercise="benchpress",reps=0,sets=0)
+#     e2 = models.Exercise.objects.create(exercise="leggpress",reps=0,sets=0)
+#     models.Schedule.objects.create(user=user,day=day,exercise=[e1,e2],name="chestday")
+#     obj = models.Schedule.objects.filter(uesr=user,day=day)
+#     for i in obj:
+#         print(i)
 days = [
     "monday",
     "tuesday",
@@ -13,22 +21,6 @@ days = [
     "saturday",
     "sunday",
 ]
-def fill_schedueler(request):
-    
-    user = request.user
-
-    for day in days:
-        obj = models.Schedule(user=user,day=day,name="Rest Day")
-        obj.save()
-        
-
-# def testing(user,day,reps,sets):
-#     e1 = models.Exercise.objects.create(exercise="benchpress",reps=0,sets=0)
-#     e2 = models.Exercise.objects.create(exercise="leggpress",reps=0,sets=0)
-#     models.Schedule.objects.create(user=user,day=day,exercise=[e1,e2],name="chestday")
-#     obj = models.Schedule.objects.filter(uesr=user,day=day)
-#     for i in obj:
-#         print(i)
 def logout_user(request):
     logout(request)
     return redirect("homepage")
@@ -62,8 +54,7 @@ def userpage(request):
             "obj":obj,
         }
         return render(request,"userPage.html",context)
-        
-    fill_schedueler(request)
+         
     obj = models.Schedule.objects.filter(user = request.user)
     print(obj)
     context = {

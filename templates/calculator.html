@@ -2,37 +2,89 @@
 {%block content%}
 <div class="calculator-container">
 
+    <h1>Calorie Calculator</h1>
+    <hr>
     <form action="" method="POST">
-        {%csrf_token%}
         {% csrf_token %}
-        <label for="weight">Weight (in Kgs):</label>
-        <input type="number" name="weight" id="weight"><br>
-        <label for="height">Height (in inches):</label>
-        <input type="number" name="height" id="height"><br>
-        <label for="age">Age:</label>
-        <input type="number" name="age" id="age"><br>
-        <label for="gender">Gender:</label>
-        <input type="radio" name="gender" value="male" id="male"><label for="male">Male</label>
-        <input type="radio" name="gender" value="female" id="female"><label for="female">Female</label><br>
-        <label for="activity_level">Activity Level:</label>
-        <select name="activity_level" id="activity_level">
-            <option value="sedentary">Sedentary</option>
-            <option value="lightly_active">Lightly Active</option>
-            <option value="moderately_active">Moderately Active</option>
-            <option value="very_active">Very Active</option>
-            <option value="extra_active">Extra Active</option>
-        </select><br>
-        <button type="submit">Calculate</button>
+        <table class="input-table">
+            <tr>
+                <td><label for="weight">Weight (in Kgs):</label></td>
+                <td><input type="number" name="weight" id="weight"></td>
+            </tr>
+            <tr>
+                <td><label for="height">Height (in inches):</label></td>
+                <td><input type="number" name="height" id="height"></td>
+            </tr>
+            <tr>
+                <td><label for="age">Age:</label></td>
+                <td><input type="number" name="age" id="age"></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender:</label></td>
+                <td>
+                    <input type="radio" name="gender" value="male" id="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" value="female" id="female">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="activity_level">Activity Level:</label></td>
+                <td>
+                    <select name="activity_level" id="activity_level">
+                        <option value="sedentary">Sedentary</option>
+                        <option value="lightly_active">Lightly Active</option>
+                        <option value="moderately_active">Moderately Active</option>
+                        <option value="very_active">Very Active</option>
+                        <option value="extra_active">Extra Active</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div id="submit-button-div">
+            <button type="submit">Calculate</button>
+        </div>
     </form>
+
     <div class="ans">
         {{tdee}}cal/day
     </div>
 
 </div>
 <style>
+    .input-table {
+        /* background-color: red; */
+        margin: auto 100px;
+    }
+
+    #submit-button-div {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .calculator-container {
+        margin: 50px 0;
+    }
+
+    .calculator-container h1 {
+        margin: 0 auto;
+        padding: 15px 15px;
+        background-color: rgb(66, 66, 62);
+        width: fit-content;
+        border-radius: 50px;
+        color: white;
+        letter-spacing: 1.5px;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    hr {
+        margin: 40px 0;
+    }
+
     /* Set default styles for all form elements */
     .ans {
-        font-size: 30px;
+        font-size: 18px;
         color: white;
         text-align: center;
         border: 2px dotted black;
@@ -77,6 +129,7 @@
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
+        border-radius: 50px;
     }
 
     /* Change the button color when it's hovered over */
@@ -91,7 +144,7 @@
     }
 
     label {
-        font-size: 30px;
+        font-size: 16px;
     }
 </style>
 {%endblock%}

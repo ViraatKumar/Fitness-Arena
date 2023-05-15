@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from scheduler import models as scheduler_models
 from . import forms
 from . import models 
 # import requests
@@ -9,6 +10,23 @@ from scheduler import views as scheduler
 import json
 from pprint import pprint
 # Create your views here.
+days = [
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday",
+]
+def fill_schedueler(request):
+    
+    user = request.user
+
+    for day in days:
+        obj = scheduler_models.Schedule(user=user,day=day,name="Rest Day")
+        obj.save()
+        
 def form_id_select(arg):
     if arg=="login":
         return "login-form-view"
@@ -51,12 +69,13 @@ def loginreg(request):
                 return render(request,"login_reg.html",context)
 
             else:
-                print("trying to create new user")
+                # new user is being created
                 user = User.objects.create_user(username=username,password=password)
                 context = {
                     "user":user.username,
                 }
                 login(request,user)
+                fill_schedueler(request)
                 return redirect("userpage")
                 
     context={
